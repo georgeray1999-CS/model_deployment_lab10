@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+<body>
+<center><h1><font color="white">Heart Disease Prediction</h1></center>
+<h2>     </h2>
+
+<div align="center" style="margin-right: 30%;
+    margin-left: 30%;">
+
+  <form method="POST">
+  <form action="/action_page.php">
+    <label for="age"></label>
+    <input type="number" id="age" name="age" placeholder="Age" min="29" max="77" step="1" required size="35">
+
+    <label for="sex"></label>
+    <input type="number" id="sex" name="sex" placeholder="sex (1=male, 0=female)" min="0" max="1" step="1" required size="35">
+
+    <label for="cp"></label>
+    <input type="number" id="cp" name="cp" placeholder="Chest pain type (0, 1, 2 or 3)" min="0" max="3" step="1" required>
+
+    <label for="trestbps"></label>
+    <input type="number" id="trestbps" name="trestbps" placeholder="Resting blood pressure" min="0" max="200" step="0.1" required>
+
+    <label for="chol"></label>
+    <input type="number" id="chol" name="chol" placeholder="Cholesterol" min="0" max="564" step="0.1" required>
+
+    <label for="fbs"></label>
+    <input type="number" id="fbs" name="fbs" placeholder="Fasting blood sugar (1=true, 0=false)" min="0" max="1" step="1" required>
+
+    <label for="restecg"></label>
+    <input type="number" id="restecg" name="restecg" placeholder="Resting ECG" min="0" max="2" step="0.1" required>
+
+    <label for="thalach"></label>
+    <input type="number" id="thalach" name="thalach" placeholder="Maximum heart rate" min="0" max="202" step="0.1" required>
+
+    <label for="exang"></label>
+    <input type="number" id="exang" name="exang" placeholder="Exercise induced angina (1=yes, 0=no)" min="0" max="1" step="1" required>
+
+    <label for="oldpeak"></label>
+    <input type="number" id="oldpeak" name="oldpeak" placeholder="Oldpeak" min="0" max="6.2" step="0.1" required>
+
+    <label for="slope"></label>
+    <input type="number" id="slope" name="slope" placeholder="Slope" min="0" max="2" step="0.1" required>
+
+    <label for="ca"></label>
+    <input type="number" id="ca" name="ca" placeholder="number of major vessels (between 0 and 4)" min="0" max="4" step="1" required>
+
+    <label for="thal"></label>
+    <input type="number" id="thal" name="thal" placeholder="thal" min="0" max="3" step="1" required>
+
+    <select name="req_model">
+    <option value="Decision Tree">Decision Tree</option>
+    <option value="K Nearest Neighbour">K Nearest Neighbour</option>
+    <option value="Logistic Regression">Logistic Regression</option>
+  </select>
+
+
+    <input type="submit" value="Predict">
+  </form>
+</form>
+
+<form method="GET">
+    <center><h2><font color="Black"> Heart disease Category is {{target}}</h2></center>
+    <center><h2><font color="Black"> {{heart_disease}}</h2></center>
+</form>
+
+
+</div>
+
+
+</body>
+</html>
